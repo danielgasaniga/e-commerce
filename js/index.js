@@ -16,7 +16,7 @@ function verificarCampos() {
 }
 
 function enviarRegistro() {
-    return (verificarCampos () && check.checked) ? showAlertSuccess() : showAlertError();
+    return (verificarCampos) ? showAlertSuccess() : showAlertError();
 }
 
 function clicked(){

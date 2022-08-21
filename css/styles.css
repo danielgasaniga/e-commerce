@@ -175,9 +175,11 @@ footer p {
   display: none;
 }
 
-main {
+body {
   min-height: calc(100vh - 210px);
+  text-align: center;
 }
+
 
 a.custom-card,
 a.custom-card:hover {
@@ -188,3 +190,5 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.i
