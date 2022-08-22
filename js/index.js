@@ -1,7 +1,7 @@
 const email = document.getElementById("email");
 const contrasenia = document.getElementById('password');
-const button = document.getElementById("regBtn");
-regBtn.addEventListener("click", clicked);
+const button = document.getElementById("ingBtn");
+ingBtn.addEventListener("click", clicked);
 
 function showAlertSuccess() {
     document.getElementById("alert-success").classList.add("show");
@@ -16,9 +16,9 @@ function verificarCampos() {
 }
 
 function enviarRegistro() {
-    return (verificarCampos) ? showAlertSuccess() : showAlertError();
+    return (verificarCampos() && checked) ? showAlertSuccess() : showAlertError();
 }
 
 function clicked(){
-    window.location = "main.html";
+    window.location = "main.html"; //Esta funcion me llevara a la pagina inicial
 }
