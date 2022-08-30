@@ -2,9 +2,10 @@ let autosArray = []; //En dicho array, se cargaran los datos redibidos
 
 
 function showAutosList(array){ //Dicha funcion recibira un array con sus datos, y los mostrara luego en pantalla
-
-    for (let autos of array){
-        document.getElementById("container").innerHTML += `
+document.getElementById("container").innerHTML= ""; //Esto vaciara el contenedor
+    for (let autos of array){ // Llamara el array de autos
+        //Debajo agregaremos los elementos uno por uno
+        document.getElementById("container").innerHTML += ` 
         
         <div class="list-group-item list-group-item-action">
             <div class="row">
@@ -27,7 +28,7 @@ function showAutosList(array){ //Dicha funcion recibira un array con sus datos, 
     }
 }
 
-document.addEventListener("DOMContentLoaded", function(e){ //
+document.addEventListener("DOMContentLoaded", function(e){ 
     getJSONData(AUTOS_URL).then(function(resultObj){
         if (resultObj.status === "ok"){
            autosArray = resultObj.data;
