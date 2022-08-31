@@ -7,10 +7,6 @@ function verificarCampos() {
   return email.value.trim().length > 1 && contrasenia.value.trim().length > 1; //Retorne si hay algo escrito mayor a un digito, y el trim, lo que hace, es que borre si hay espacios, para no contarlos como digitos
 }
 
-function enviarRegistro() {
-  return verificarCampos() && checked ? showAlertSuccess() : showAlertError(); //
-}
-
 function clicked() {
   if (verificarCampos()) {
     window.location = "main.html"; //Esta funcion me llevara a la pagina inicial
