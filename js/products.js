@@ -27,8 +27,8 @@ document.getElementById("container").innerHTML= ""; //Esto vaciara el contenedor
         </div>
         `
     }
-}   
+}
 
 fetch(URL) //Cuando se resuelve esta "URL", y obtenemos una repuesta, se ejecuta el codigo a continuación
-.then(res=> res.json())//Entonces cuando la repuesta llega, la funcion flecha sobreescribe la variable
+.then(res=> res.json()) //Entonces cuando la repuesta llega, la funcion flecha sobreescribe la variable
 .then(data =>{productos(data.products)})//Como la repuesta es correcta, colocar la repuesta dentro de productos
