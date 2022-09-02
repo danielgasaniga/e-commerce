@@ -1,4 +1,3 @@
-let autosArray = []; //En dicho array, se cargaran los datos recibidos 
 let identidades = localStorage.getItem("catID") //Creamos la variable "identidades" que traiga todas las id de las categorias
 const URL = `${PRODUCTS_URL}${identidades}${EXT_TYPE}` //Realizamos la peticion de productos, identitades y salida
 const container = document.getElementById("container") //Creamos la constante "container" en la cual agregamos el contenido
@@ -39,13 +38,3 @@ fetch(URL) //Cuando se resuelve esta "URL", y obtenemos una repuesta, se ejecuta
     }
 })
 .then(data =>{productos(data.products)})//Como la repuesta es correcta, colocar la repuesta dentro de productos
-
-document.addEventListener("DOMContentLoaded", function(e){ 
-    getJSONData(AUTOS_URL).then(function(resultObj){
-        if (resultObj.status === "ok"){
-           autosArray = resultObj.data;
-            showAutosList(autosArray.products); 
-            console.log(autosArray.products)
-        }
-    });
-});
