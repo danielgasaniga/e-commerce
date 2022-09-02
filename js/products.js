@@ -38,3 +38,4 @@ fetch(URL) //Cuando se resuelve esta "URL", y obtenemos una repuesta, se ejecuta
     }
 })
 .then(data =>{productos(data.products)})//Como la repuesta es correcta, colocar la repuesta dentro de productos
+
