@@ -14,3 +14,9 @@ function clicked() {
     alert("Rellene los campos por favor :)"); // Si no, aparecera una alarma diciendo:  Rellene los campos por favor :)
   }
 }
+
+
+button.addEventListener("click", (evt) => { //Al apretar el boton, realizara el siguiente evento
+  // Si hay texto ingresado en el input, se guardara en el localStorage
+  if (email.value) localStorage.setItem("usuario", email.value);
+});

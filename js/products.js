@@ -1,5 +1,4 @@
-let autosArray = []; //En dicho array, se cargaran los datos redibidos 
-
+let autosArray = []; //En dicho array, se cargaran los datos recibidos 
 
 function showAutosList(array){ //Dicha funcion recibira un array con sus datos, y los mostrara luego en pantalla
 document.getElementById("container").innerHTML= ""; //Esto vaciara el contenedor
