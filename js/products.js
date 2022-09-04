@@ -1,7 +1,7 @@
 let identidades = localStorage.getItem("catID"); //Creamos la variable "identidades" que traiga todas las id de las categorias
 const URL = `${PRODUCTS_URL}${identidades}${EXT_TYPE}`; //Realizamos la peticion de productos, identitades y salida
 const container = document.getElementById("container"); //Creamos la constante "container" en la cual agregamos el contenido
-const ascendente = document.getElementById("asc1");
+const ascendente = document.getElementById("asc");
 const descendente = document.getElementById("desc");
 const relevancia = document.getElementById("rel");
 const ordenando = document.getElementById("ordenando");
@@ -12,6 +12,7 @@ const ORDER_BY_PROD_REL = "Rel";
 
 function mostrarProductos(array) {
   //Dicha funcion recibira un array con sus datos, y los mostrara luego en pantalla
+  document.getElementById("container").innerHTML = ""
   for (let productos of array) {
     // Llamara el array de productos, aqui cambiamos por el de productos
     //Debajo agregaremos los elementos uno por uno
@@ -58,24 +59,22 @@ fetch(URL) //Cuando se resuelve esta "URL", y obtenemos una repuesta, se ejecuta
     listaProductos = data.products;
     mostrarProductos(listaProductos);
   }); //Como la repuesta es correcta, colocar la repuesta dentro de productos
-console.log("putito", document.getElementById("asc1"))
+console.log("putito", document.getElementById("asc"))
 
-  document.getElementById("asc").addEventListener("change", function(){
-    alert("asdasd")
+  document.getElementById("asc").addEventListener("click", function(){
     funcAscendente()
   });
   
   document.getElementById("desc").addEventListener("click", function(){
-    mostrarProductos(ORDER_DESC_BY_COST);
+    funcDescendente()
   });
   
   document.getElementById("rel").addEventListener("click", function(){
-    mostrarProductos(ORDER_BY_PROD_REL);
+    funcRelevancia()
   });
 })  
 
 function funcAscendente (){
-   alert("dasdasd")
    listaProductos.sort((a, b) => {
        if(a.cost > b.cost) {return -1;}
        if(a.cost < b.cost) {return 1;}
@@ -84,21 +83,21 @@ function funcAscendente (){
    mostrarProductos(listaProductos)
  };
 
-descendente.addEventListener("click", function(){
+ function funcDescendente (){
   listaProductos.sort((a, b) => {
       if(a.cost < b.cost) {return -1;}
       if(a.cost > b.cost) {return 1;}
       return 0;
   });
   mostrarProductos(listaProductos)
-});
+};
 
-relevancia.addEventListener("click", function(){
+function funcRelevancia (){
   listaProductos.sort((a, b) => {
       if(a.soldCount > b.soldCount) {return -1;}
       if(a.soldCount < b.soldCount) {return 1;}
       return 0;
   });
   mostrarProductos(listaProductos)
-});
+};
 
