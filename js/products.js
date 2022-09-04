@@ -1,14 +1,9 @@
-let identidades = localStorage.getItem("catID"); //Creamos la variable "identidades" que traiga todas las id de las categorias
+let identidades = localStorage.getItem("catID"); //Creo la variable "identidades" que traiga todas las id de las categorias
 const URL = `${PRODUCTS_URL}${identidades}${EXT_TYPE}`; //Realizamos la peticion de productos, identitades y salida
-const container = document.getElementById("container"); //Creamos la constante "container" en la cual agregamos el contenido
-const ascendente = document.getElementById("asc");
-const descendente = document.getElementById("desc");
-const relevancia = document.getElementById("rel");
-const ordenando = document.getElementById("ordenando");
-var listaProductos = [];
-const ORDER_ASC_BY_COST= "$Asc";
-const ORDER_DESC_BY_COST = "$Desc";
-const ORDER_BY_PROD_REL = "Rel";
+const container = document.getElementById("container"); //Creao la constante "container" en la cual agregamos el contenido
+const ascendente = document.getElementById("asc"); //Creo la constante del boton ascendente
+const descendente = document.getElementById("desc"); //Creo la constante del boton descendente
+const relevancia = document.getElementById("rel"); //Creo la constante del boton relevancia
 
 function mostrarProductos(array) {
   //Dicha funcion recibira un array con sus datos, y los mostrara luego en pantalla
@@ -59,22 +54,21 @@ fetch(URL) //Cuando se resuelve esta "URL", y obtenemos una repuesta, se ejecuta
     listaProductos = data.products;
     mostrarProductos(listaProductos);
   }); //Como la repuesta es correcta, colocar la repuesta dentro de productos
-console.log("putito", document.getElementById("asc"))
 
-  document.getElementById("asc").addEventListener("click", function(){
+  document.getElementById("asc").addEventListener("click", function(){  //Hago que ralice la funcion de ascender al apretar el boton click
     funcAscendente()
   });
   
-  document.getElementById("desc").addEventListener("click", function(){
+  document.getElementById("desc").addEventListener("click", function(){ //Hago que ralice la funcion de descender al apretar el boton click
     funcDescendente()
   });
   
-  document.getElementById("rel").addEventListener("click", function(){
+  document.getElementById("rel").addEventListener("click", function(){ //Hago que ralice la funcion de relevancia al apretar el boton click
     funcRelevancia()
   });
-})  
+}) 
 
-function funcAscendente (){
+function funcAscendente (){ //Creo la funcion ascendente, haciendo el orden para que me muestre el producto de mayor precio, al de menor precio
    listaProductos.sort((a, b) => {
        if(a.cost > b.cost) {return -1;}
        if(a.cost < b.cost) {return 1;}
@@ -83,7 +77,7 @@ function funcAscendente (){
    mostrarProductos(listaProductos)
  };
 
- function funcDescendente (){
+ function funcDescendente (){ //Creo la funcion descendente, haciendo el orden para que me muestre el producto de menor precio, al de mayor precio
   listaProductos.sort((a, b) => {
       if(a.cost < b.cost) {return -1;}
       if(a.cost > b.cost) {return 1;}
@@ -92,7 +86,7 @@ function funcAscendente (){
   mostrarProductos(listaProductos)
 };
 
-function funcRelevancia (){
+function funcRelevancia (){ //Creo la funcion relevancia, haciendo el orden para que me muestre desde el producto mas venido, al de menos venta
   listaProductos.sort((a, b) => {
       if(a.soldCount > b.soldCount) {return -1;}
       if(a.soldCount < b.soldCount) {return 1;}
@@ -100,4 +94,3 @@ function funcRelevancia (){
   });
   mostrarProductos(listaProductos)
 };
-
