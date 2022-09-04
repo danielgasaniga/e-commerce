@@ -42,9 +42,43 @@
         <h2 class="">Productos</h2>
         <div class="container"> <h5><p>Verás aquí todos los productos de dicha categoria</p></h5>
     </div>
-  </main>
   <footer class="text-muted">
-    <div id="container">
+    <div id="container">  
+      <div class="row">
+        <div class="col text-end">
+          <div class="btn-group btn-group-toggle mb-4" data-bs-toggle="buttons">
+            <button id="asc">prueba</button>
+            <input type="radio" class="btn-check" name="options" id="asc1"> 
+            <label class="btn btn-light" for="asc1"><i class="fas fa-sort-amount-down mr-1"></i>$</label>
+            <input type="radio" class="btn-check" name="options" id="desc">
+            <label class="btn btn-light" for="desc"><i class="fas fa-sort-amount-up mr-1"></i>$</label>
+            <input type="radio" class="btn-check" name="options" id="rel" checked>
+            <label class="btn btn-light" for="rel"><i class="fas fa-sort-amount-down mr-1"></i>Rel</label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
+          <div class="row container p-0 m-0">
+            <div class="col">
+              <p class="font-weight-normal text-end my-2">Precio</p>
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
+            </div>
+            <div class="col">
+              <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
+            </div>
+            <div class="col-3 p-0">
+              <div class="btn-group" role="group">
+                <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+                <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
       <p class="float-end">
         <a href="#">Volver arriba</a>
     </div>
