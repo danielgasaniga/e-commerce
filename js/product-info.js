@@ -1,6 +1,9 @@
 let prodID = localStorage.getItem("prodID"); //Realizo un local storage, que me lo guarde en pordID
 const INFO_URL = `https://japceibal.github.io/emercado-api/products/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
 const INFO_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
+const info_comments = document.getElementById("comments")
+console.log(INFO_URL)
+console.log(INFO_COMMENTS_URL)
 
 fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del producto deseado
 .then (response => response.json())
@@ -44,10 +47,13 @@ fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del
 fetch(INFO_COMMENTS_URL)
 .then (response => response.json())
 .then (infoComments => {
-    let comments = document.getElementById("comments")
-    comments.innerHTML +=` <div class="container">
-    <br>
-         <h1>${infoComments.product}</h1>
-         </div>
-            `
-    });
+    for(let commentsData of infoComments){
+        info_comments.innerHTML += `<li class="list-group-item comments-list">
+            <p class = "comments-list-head"><b>${commentsData.user}</b> - ${commentsData.dateTime} -<span class="fa fa-star checked"> ${commentsData.score}</p> </span>
+            <p class = "comments-list-data">${commentsData.description}</p>
+        </li> `
+    }
+
+ });
+  
+    
