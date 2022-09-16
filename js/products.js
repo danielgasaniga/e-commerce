@@ -5,15 +5,20 @@ const ascendente = document.getElementById("asc"); //Creo la constante del boton
 const descendente = document.getElementById("desc"); //Creo la constante del boton descendente
 const relevancia = document.getElementById("rel"); //Creo la constante del boton relevancia
 
+function setProdID(id) {  //ENTREGA, PARTE 1 
+  localStorage.setItem("prodID", id);
+  window.location = "product-info.html"
+}
+
 function mostrarProductos(array) {
   //Dicha funcion recibira un array con sus datos, y los mostrara luego en pantalla
   document.getElementById("container").innerHTML = ""
   for (let productos of array) {
     // Llamara el array de productos, aqui cambiamos por el de productos
     //Debajo agregaremos los elementos uno por uno
-    document.getElementById("container").innerHTML +=
+    document.getElementById("container").innerHTML += //ENTREGA, PARTE 1 
       ` 
-        
+      <div onclick="setProdID(${productos.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="list-group-item list-group-item-action">
             <div class="row">
                 <div class="col-3">
@@ -94,3 +99,4 @@ function funcRelevancia (){ //Creo la funcion relevancia, haciendo el orden para
   });
   mostrarProductos(listaProductos)
 };
+
