@@ -47,6 +47,7 @@ fetch(INFO_COMMENTS_URL)
     let comments = document.getElementById("comments")
     comments.innerHTML +=` <div class="container">
     <br>
-         <h1>${infoComments.user}</h1>
-             `
-            })
+         <h1>${infoComments.product}</h1>
+         </div>
+            `
+    });
