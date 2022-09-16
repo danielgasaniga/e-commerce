@@ -41,19 +41,18 @@ fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del
                                         </div>
                                     </div>
                                     </div>
+                                    <br>
                                     `
     });
 
-fetch(INFO_COMMENTS_URL)
+fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentarios de cada producto
 .then (response => response.json())
 .then (infoComments => {
     for(let commentsData of infoComments){
         info_comments.innerHTML += `<li class="list-group-item comments-list">
-            <p class = "comments-list-head"><b>${commentsData.user}</b> - ${commentsData.dateTime} -<span class="fa fa-star checked"> ${commentsData.score}</p> </span>
+            <p class = "comments-list-head"><b>${commentsData.user}</b> - ${commentsData.dateTime} -<span class="fa fa-star checked"> ${commentsData.score}</p><span>
             <p class = "comments-list-data">${commentsData.description}</p>
         </li> `
     }
 
  });
-  
-    
