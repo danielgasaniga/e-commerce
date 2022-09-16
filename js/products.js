@@ -4,8 +4,11 @@ const container = document.getElementById("container"); //Creao la constante "co
 const ascendente = document.getElementById("asc"); //Creo la constante del boton ascendente
 const descendente = document.getElementById("desc"); //Creo la constante del boton descendente
 const relevancia = document.getElementById("rel"); //Creo la constante del boton relevancia
+const INFO_URL = PRODUCT_INFO_URL + localStorage.getItem("prodID") + EXT_TYPE //ENTREGA 3, PARTE 1
+let currentProductsArray = [];
+let currentSortCriteria = undefined;
 
-function setProdID(id) {  //ENTREGA, PARTE 1 
+function setProdID(id) {  //ENTREGA 3 , PARTE 1 
   localStorage.setItem("prodID", id);
   window.location = "product-info.html"
 }
@@ -16,7 +19,7 @@ function mostrarProductos(array) {
   for (let productos of array) {
     // Llamara el array de productos, aqui cambiamos por el de productos
     //Debajo agregaremos los elementos uno por uno
-    document.getElementById("container").innerHTML += //ENTREGA, PARTE 1 
+    document.getElementById("container").innerHTML += //ENTREGA 3, PARTE 1 
       ` 
       <div onclick="setProdID(${productos.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="list-group-item list-group-item-action">
@@ -100,3 +103,26 @@ function funcRelevancia (){ //Creo la funcion relevancia, haciendo el orden para
   mostrarProductos(listaProductos)
 };
 
+function sortAndShowProducts(sortCriteria, productsArray){ //ENTREGA 3, PARTE 1
+  currentSortCriteria = sortCriteria;
+
+  if(productsArray != undefined){
+      currentProductsArray = productsArray;
+  }
+
+  currentProductsArray = sortProducts(currentSortCriteria, currentProductsArray);
+
+  //Muestro las categorías ordenadas
+  showProductsList();
+}
+
+//Función que se ejecuta una vez que se haya lanzado el evento de
+//que el documento se encuentra cargado, es decir, se encuentran todos los
+//elementos HTML presentes.
+document.addEventListener("DOMContentLoaded", function(e){ //ENTREGA 3, PARTE 1
+  getJSONData(INFO_URL).then(function(resultObj){
+      if (resultObj.status === "ok"){
+          currentPorductsArray = resultObj.data
+          showPoductsList()
+        }
+      })})
