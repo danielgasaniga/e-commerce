@@ -50,9 +50,14 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
 .then (infoComments => {
     for(let commentsData of infoComments){
         info_comments.innerHTML += `<li class="list-group-item comments-list">
-            <p class = "comments-list-head"><b>${commentsData.user}</b> - ${commentsData.dateTime} -<span class="fa fa-star checked"> ${commentsData.score}</p><span>
-            <p class = "comments-list-data">${commentsData.description}</p>
-        </li> `
+        <p class = "comments-list-head"><b>${commentsData.user}</b> - ${commentsData.dateTime}  
+        <span class="fa fa-star ${commentsData.score >=1 ? "checked": ""}"></span>
+        <span class="fa fa-star ${commentsData.score >=2 ? "checked": ""}"></span>
+        <span class="fa fa-star ${commentsData.score >=3 ? "checked": ""}"></span>
+        <span class="fa fa-star ${commentsData.score >=4 ? "checked": ""}"></span>
+        <span class="fa fa-star ${commentsData.score >=5 ? "checked": ""}"></span>
+        <p class = "comments-list-data">${commentsData.description}</p>
+    </li> `
     }
 
  });
