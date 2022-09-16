@@ -8,7 +8,7 @@ const INFO_URL = PRODUCT_INFO_URL + localStorage.getItem("prodID") + EXT_TYPE //
 let currentProductsArray = [];
 let currentSortCriteria = undefined;
 
-function setProdID(id) {  //ENTREGA 3 , PARTE 1 
+function setProdID(id) {  //Realizo una funcion para traer el local storage, y me rediriga a product-info.html
   localStorage.setItem("prodID", id);
   window.location = "product-info.html"
 }
@@ -19,7 +19,7 @@ function mostrarProductos(array) {
   for (let productos of array) {
     // Llamara el array de productos, aqui cambiamos por el de productos
     //Debajo agregaremos los elementos uno por uno
-    document.getElementById("container").innerHTML += //ENTREGA 3, PARTE 1 
+    document.getElementById("container").innerHTML += //Aqui le agregue el productos.id, par que al hacer el click me bridne la informacion del producto deseado
       ` 
       <div onclick="setProdID(${productos.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="list-group-item list-group-item-action">
@@ -103,7 +103,7 @@ function funcRelevancia (){ //Creo la funcion relevancia, haciendo el orden para
   mostrarProductos(listaProductos)
 };
 
-function sortAndShowProducts(sortCriteria, productsArray){ //ENTREGA 3, PARTE 1
+function sortAndShowProducts(sortCriteria, productsArray){ 
   currentSortCriteria = sortCriteria;
 
   if(productsArray != undefined){
@@ -119,7 +119,7 @@ function sortAndShowProducts(sortCriteria, productsArray){ //ENTREGA 3, PARTE 1
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
-document.addEventListener("DOMContentLoaded", function(e){ //ENTREGA 3, PARTE 1
+document.addEventListener("DOMContentLoaded", function(e){ //Realizo un addeventlistener para traer la informacion del json
   getJSONData(INFO_URL).then(function(resultObj){
       if (resultObj.status === "ok"){
           currentPorductsArray = resultObj.data

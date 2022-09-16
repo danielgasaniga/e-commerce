@@ -1,8 +1,8 @@
-let prodID = localStorage.getItem("prodID");
-const INFO_URL = `https://japceibal.github.io/emercado-api/products/${prodID}.json`
-const INFO_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${prodID}.json`
+let prodID = localStorage.getItem("prodID"); //Realizo un local storage, que me lo guarde en pordID
+const INFO_URL = `https://japceibal.github.io/emercado-api/products/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
+const INFO_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
 
-fetch(INFO_URL)
+fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del producto deseado
 .then (response => response.json())
 .then (infoProduct => {
     let container = document.getElementById("container")
