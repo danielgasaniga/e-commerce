@@ -193,3 +193,19 @@ a.custom-card:hover {
 #login { 
   color: white
 }
+
+#opinion{
+  width: 650px;
+  height: 100px;
+}
+
+#puntaje{
+width: 125px
+}
+
+#enviar{
+  color: white;
+  background-color:#0D6EFD;
+  border-radius: 2px;
+  border: 1px dashed #0087F7;
+}
