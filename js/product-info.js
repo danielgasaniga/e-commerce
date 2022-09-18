@@ -64,7 +64,20 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
 
  botonEnviar.addEventListener("click", (evt) => { //Al apretar el boton, realizara el siguiente evento
     // Si hay texto ingresado en el input, se guardara en el localStorage
-    if (nuevoComentario.value) localStorage.setItem("usuario", nuevoComentario.value);
+    if (nuevoComentario.value) localStorage.setItem("comentarios", nuevoComentario.value);
   });
 
-  
+  var tmpDate = new Date().toLocaleString()
+  let usuario = localStorage.getItem("usuario")
+  let conectarComentarios = localStorage.getItem("comentarios")
+  let comentarioPersonal = document.getElementById("comments")
+  comentarioPersonal.innerHTML = `<li class="list-group-item comments-list">
+  <p class = "comments-list-head"><b>${usuario}</b> - ${tmpDate}  
+  <span class="fa fa-star ${conectarComentarios.score >=1 ? "checked": ""}"></span>
+  <span class="fa fa-star ${conectarComentarios.score >=2 ? "checked": ""}"></span>
+  <span class="fa fa-star ${conectarComentarios.score >=3 ? "checked": ""}"></span>
+  <span class="fa fa-star ${conectarComentarios.score >=4 ? "checked": ""}"></span>
+  <span class="fa fa-star ${conectarComentarios.score >=5 ? "checked": ""}"></span>
+  <p class = "comments-list-data">${conectarComentarios}</p>
+  </li> ` 
+
