@@ -2,6 +2,8 @@ let prodID = localStorage.getItem("prodID"); //Realizo un local storage, que me 
 const INFO_URL = `https://japceibal.github.io/emercado-api/products/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
 const INFO_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
 const info_comments = document.getElementById("comments")
+const botonEnviar = document.getElementById("botonEnviar")
+let nuevoComentario = document.getElementById("nuevoComentario")
 
 fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del producto deseado
 .then (response => response.json())
@@ -43,7 +45,7 @@ fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del
                                     `
     });
 
-fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentarios de cada producto
+fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentarios de cada producto con sus datos correspondientes
 .then (response => response.json())
 .then (infoComments => {
     for(let commentsData of infoComments){
@@ -59,3 +61,10 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
     }
 
  });
+
+ botonEnviar.addEventListener("click", (evt) => { //Al apretar el boton, realizara el siguiente evento
+    // Si hay texto ingresado en el input, se guardara en el localStorage
+    if (nuevoComentario.value) localStorage.setItem("usuario", nuevoComentario.value);
+  });
+
+  
