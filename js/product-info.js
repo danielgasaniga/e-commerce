@@ -1,9 +1,9 @@
 let prodID = localStorage.getItem("prodID"); //Realizo un local storage, que me lo guarde en pordID
 const INFO_URL = `https://japceibal.github.io/emercado-api/products/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
 const INFO_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_comments/${prodID}.json` //Traigo los datos del json y los coloco en dicha variable
-const info_comments = document.getElementById("comments")
-const botonEnviar = document.getElementById("botonEnviar")
-let nuevoComentario = document.getElementById("nuevoComentario")
+const info_comments = document.getElementById("comments")//Creo una variable, en donde ira lo que escriba como nuevo comentario
+const botonEnviar = document.getElementById("botonEnviar")//Traigo el boton
+let nuevoComentario = document.getElementById("nuevoComentario")//Creo una variable, para escribir mi nuevo comentario
 
 fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del producto deseado
 .then (response => response.json())
@@ -67,11 +67,11 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
     if (nuevoComentario.value) localStorage.setItem("comentarios", nuevoComentario.value);
   });
 
-  var tmpDate = new Date().toLocaleString()
-  let usuario = localStorage.getItem("usuario")
-  let conectarComentarios = localStorage.getItem("comentarios")
-  let comentarioPersonal = document.getElementById("comments")
-  comentarioPersonal.innerHTML = `<li class="list-group-item comments-list">
+  let usuario = localStorage.getItem("usuario") //Traigo la variable del correo, como usuario para los comentarios nuevos
+  let conectarComentarios = localStorage.getItem("comentarios")//Traigo lo almacenado en el local storage comentarios
+  var tmpDate = new Date().toLocaleString() // Trae la fecha actual
+  //Agrego los comentarios que quiero, con mi usuario, la fecha actual, sus estrellas, y el comentario que deseo
+  info_comments.innerHTML = `<li class="list-group-item comments-list">
   <p class = "comments-list-head"><b>${usuario}</b> - ${tmpDate}  
   <span class="fa fa-star ${conectarComentarios.score >=1 ? "checked": ""}"></span>
   <span class="fa fa-star ${conectarComentarios.score >=2 ? "checked": ""}"></span>
