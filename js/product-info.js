@@ -4,6 +4,8 @@ const INFO_COMMENTS_URL = `https://japceibal.github.io/emercado-api/products_com
 const info_comments = document.getElementById("comments")//Creo una variable, en donde ira lo que escriba como nuevo comentario
 const botonEnviar = document.getElementById("botonEnviar")//Traigo el boton
 let nuevoComentario = document.getElementById("nuevoComentario")//Creo una variable, para escribir mi nuevo comentario
+const relacionados = document.getElementById("relacionados"); //Creo la constante "relacionados" en la cual agregamos el contenido
+
 
 fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del producto deseado
 .then (response => response.json())
@@ -80,4 +82,26 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
   <span class="fa fa-star ${conectarComentarios.score >=5 ? "checked": ""}"></span>
   <p class = "comments-list-data">${conectarComentarios}</p>
   </li> ` 
+
+  function relacionando() {
+    let htmlContentToAppend = "";
+    for (const relacionando of lista.relatedProducts) {
+      htmlContentToAppend += `<div class="col-md-4">
+      <div class="card mb-4 shadow-sm custom-card cursor-active">
+      <img class="bd-placeholder-img card-img-top" src="${relacionando.image}"  class="img-thumbnail">
+      <p class="m-3">${relacionando.name}</p>
+      </div>
+      </div>
+  `;
+  relacionados.innerHTML = htmlContentToAppend;
+    }
+  }
+
+document.addEventListener("DOMContentLoaded", function(){ //Realizo un addeventlistener para traer la informacion del json
+    getJSONData(INFO_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            lista = resultObj.data
+            relacionando(lista)
+          }
+        })})    
 

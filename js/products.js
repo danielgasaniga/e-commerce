@@ -1,10 +1,10 @@
 let identidades = localStorage.getItem("catID"); //Creo la variable "identidades" que traiga todas las id de las categorias
 const URL = `${PRODUCTS_URL}${identidades}${EXT_TYPE}`; //Realizamos la peticion de productos, identitades y salida
-const container = document.getElementById("container"); //Creao la constante "container" en la cual agregamos el contenido
+const container = document.getElementById("container"); //Creo la constante "container" en la cual agregamos el contenido
 const ascendente = document.getElementById("asc"); //Creo la constante del boton ascendente
 const descendente = document.getElementById("desc"); //Creo la constante del boton descendente
 const relevancia = document.getElementById("rel"); //Creo la constante del boton relevancia
-const INFO_URL = PRODUCT_INFO_URL + localStorage.getItem("prodID") + EXT_TYPE //ENTREGA 3, PARTE 1
+const INFO_URL = PRODUCT_INFO_URL + localStorage.getItem("prodID") + EXT_TYPE //Creo dicha variabale para taer la informacion, sumarle el id del local storage y el json
 let currentProductsArray = [];
 let currentSortCriteria = undefined;
 
@@ -19,7 +19,7 @@ function mostrarProductos(array) {
   for (let productos of array) {
     // Llamara el array de productos, aqui cambiamos por el de productos
     //Debajo agregaremos los elementos uno por uno
-    document.getElementById("container").innerHTML += //Aqui le agregue el productos.id, par que al hacer el click me bridne la informacion del producto deseado
+    document.getElementById("container").innerHTML += //Aqui le agregue el productos.id, para que al hacer el click me bridne la informacion del producto deseado
       ` 
       <div onclick="setProdID(${productos.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="list-group-item list-group-item-action">
