@@ -87,7 +87,7 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
     let htmlContentToAppend = "";
     for (const relacionando of lista.relatedProducts) {
       htmlContentToAppend += `<div class="col-md-4">
-      <div class="card mb-4 shadow-sm custom-card cursor-active">
+      <div class="card mb-4 shadow-sm custom-card cursor-active class="list-group-item list-group-item-action">
       <img class="bd-placeholder-img card-img-top" src="${relacionando.image}"  class="img-thumbnail">
       <p class="m-3">${relacionando.name}</p>
       </div>
