@@ -85,8 +85,8 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
 
   function relacionando() {
     let htmlContentToAppend = "";
-    for (const relacionando of lista.relatedProducts) {
-      htmlContentToAppend += `<div class="col-md-4">
+    for (const relacionando of lista.relatedProducts) {//Agrego un onclick, al cargar relacionados, y relacionando.id para que al ahcer click me redirija hacia el producto relacionado deseado
+      htmlContentToAppend += `<div onclick="cargarRelacionados(${relacionando.id})" class="col-md-4"> 
       <div class="card mb-4 shadow-sm custom-card cursor-active class="list-group-item list-group-item-action">
       <img class="bd-placeholder-img card-img-top" src="${relacionando.image}"  class="img-thumbnail">
       <p class="m-3">${relacionando.name}</p>
@@ -104,4 +104,9 @@ document.addEventListener("DOMContentLoaded", function(){ //Realizo un addeventl
             relacionando(lista)
           }
         })})    
+
+function cargarRelacionados(id){
+  localStorage.setItem("prodID", id);
+  window.location = "product-info.html"
+}
 
