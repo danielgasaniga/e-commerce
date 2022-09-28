@@ -29,8 +29,15 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item" id="login"> <!--Aqui creamos el id login, en donde nos mostrara el correo con el cual nos logeamos-->
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="login" data-bs-toggle="dropdown" aria-expanded="false"> <!--Agrego una lista desplegable, con botones, que cada una redirija a donde desee-->
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="login">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="index.html">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
