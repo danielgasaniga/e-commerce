@@ -17,3 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
 let valor = localStorage.getItem("usuario") // Traemos lo que se encuentra dentro de "usuario" y lo colocamos en una nueva variable llamada valor
 let ingreso = document.getElementById("login") // Creamos una variable llamada "ingreso" en la cual traemos el id, de donde mostrare el correo con el cual se ingresa
 ingreso.innerHTML = `<li>${valor}</li>` // Agregara el contenido dentro de "valor", que es el correo, y lo mostrara
+
+salida.addEventListener('click', function(){ //Creo dicha funcion para que al cerrar sesion, desaparezca usuario con el que me logee
+    localStorage.removeItem('usuario');
+})

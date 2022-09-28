@@ -83,9 +83,14 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
   <p class = "comments-list-data">${conectarComentarios}</p>
   </li> ` 
 
-  function relacionando() {
+  function cargarRelacionados(id){ //Aqui realizo una funcion para que me enviar al local storage el producto, y me redirija
+    localStorage.setItem("prodID", id);
+    window.location = "product-info.html"
+  }
+
+  function relacionando() {//Creo esta funcion, para traer la informacian de los productos relacionados, trayendo su imagen, y nombre, y a la vez realizo un evento onclick, para que al cargar dichos productos, al hacer click, me redirija hacia la informacion de los mismos
     let htmlContentToAppend = "";
-    for (const relacionando of lista.relatedProducts) {//Agrego un onclick, al cargar relacionados, y relacionando.id para que al ahcer click me redirija hacia el producto relacionado deseado
+    for (const relacionando of lista.relatedProducts) {
       htmlContentToAppend += `<div onclick="cargarRelacionados(${relacionando.id})" class="col-md-4"> 
       <div class="card mb-4 shadow-sm custom-card cursor-active class="list-group-item list-group-item-action">
       <img class="bd-placeholder-img card-img-top" src="${relacionando.image}"  class="img-thumbnail">
@@ -105,8 +110,5 @@ document.addEventListener("DOMContentLoaded", function(){ //Realizo un addeventl
           }
         })})    
 
-function cargarRelacionados(id){
-  localStorage.setItem("prodID", id);
-  window.location = "product-info.html"
-}
+
 
