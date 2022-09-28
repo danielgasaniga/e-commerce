@@ -34,17 +34,47 @@ fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del
                                 </div>
                                     <div>
                                         <h5><b>Imágenes ilustrativas</b></h5>
-                                    
-                                        <div class="col-3 d-flex">
-                                            <img src="${infoProduct.images[0]}" alt="${infoProduct.description}" class="img-thumbnail img">
-                                            <img src="${infoProduct.images[1]}" alt="${infoProduct.description}" class="img-thumbnail img">
-                                            <img src="${infoProduct.images[2]}" alt="${infoProduct.description}" class="img-thumbnail img">
-                                            <img src="${infoProduct.images[3]}" alt="${infoProduct.description}" class="img-thumbnail img">
+                                        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
                                         </div>
-                                    </div>
-                                    </div>
-                                    <br>
-                                    `
+                                        <div class="carousel-inner">
+                                        <div class="carousel-item active" data-bs-interval="10000">
+                                        <img src="${infoProduct.images[0]}" class="d-block w-100" alt="${infoProduct.description}">
+                                        <div class="carousel-caption d-none d-md-block">
+                                        </div>
+                                        </div>
+                                        <div class="carousel-item" data-bs-interval="2000">
+                                        <img src="${infoProduct.images[1]}" class="d-block w-100" alt="${infoProduct.description}">
+                                        <div class="carousel-caption d-none d-md-block">
+                                        </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                        <img src="${infoProduct.images[2]}" class="d-block w-100" alt="${infoProduct.description}">
+                                        <div class="carousel-caption d-none d-md-block">
+                                        </div>
+                                        </div>
+                                        <div class="carousel-item">
+                                        <img src="${infoProduct.images[3]}" class="d-block w-100" alt="${infoProduct.description}">
+                                        <div class="carousel-caption d-none d-md-block">
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                        </button>
+                                        </div>
+                                        </div>
+                                        </div>
+                                        <br>
+                                        `
     });
 
 fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentarios de cada producto con sus datos correspondientes
