@@ -61,7 +61,7 @@ fetch(URL) //Cuando se resuelve esta "URL", y obtenemos una repuesta, se ejecuta
   .then((data) => {
     listaProductos = data.products;
     mostrarProductos(listaProductos);
-  }); //Como la repuesta es correcta, colocar la respuesta dentro de productos
+  }); //Como la repuesta es correcta, colocar la repuesta dentro de productos
 
   document.getElementById("asc").addEventListener("click", function(){  //Hago que ralice la funcion de ascender al apretar el boton click
     funcAscendente()
