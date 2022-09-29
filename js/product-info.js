@@ -119,6 +119,14 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
     window.location = "product-info.html"
   }
 
+  document.addEventListener("DOMContentLoaded", function(){ //Realizo un addeventlistener para traer la informacion del json
+    getJSONData(INFO_URL).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            lista = resultObj.data
+            relacionando(lista)
+          }
+        })})    
+        
   function relacionando() {//Creo esta funcion, para traer la informacian de los productos relacionados, trayendo su imagen, y nombre, y a la vez realizo un evento onclick, para que al cargar dichos productos, al hacer click, me redirija hacia la informacion de los mismos
     let htmlContentToAppend = "";
     for (const relacionando of lista.relatedProducts) {
@@ -133,13 +141,7 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
     }
   }
 
-document.addEventListener("DOMContentLoaded", function(){ //Realizo un addeventlistener para traer la informacion del json
-    getJSONData(INFO_URL).then(function(resultObj){
-        if (resultObj.status === "ok"){
-            lista = resultObj.data
-            relacionando(lista)
-          }
-        })})    
+
 
 
 
