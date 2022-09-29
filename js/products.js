@@ -19,7 +19,7 @@ function mostrarProductos(array) {
   for (let productos of array) {
     // Llamara el array de productos, aqui cambiamos por el de productos
     //Debajo agregaremos los elementos uno por uno
-    document.getElementById("container").innerHTML += //Aqui le agregue el productos.id, para que al hacer el click me bridne la informacion del producto deseado
+    document.getElementById("container").innerHTML += //Aqui le agregue el productos.id, para que al hacer el click me brinde la informacion del producto deseado
       ` 
       <div onclick="setProdID(${productos.id})" class="list-group-item list-group-item-action cursor-active">
         <div class="list-group-item list-group-item-action">
@@ -61,7 +61,7 @@ fetch(URL) //Cuando se resuelve esta "URL", y obtenemos una repuesta, se ejecuta
   .then((data) => {
     listaProductos = data.products;
     mostrarProductos(listaProductos);
-  }); //Como la repuesta es correcta, colocar la repuesta dentro de productos
+  }); //Como la repuesta es correcta, colocar la respuesta dentro de productos
 
   document.getElementById("asc").addEventListener("click", function(){  //Hago que ralice la funcion de ascender al apretar el boton click
     funcAscendente()

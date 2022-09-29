@@ -8,7 +8,7 @@ const relacionados = document.getElementById("relacionados"); //Creo la constant
 
 
 fetch(INFO_URL) // Realizo el fetch para que me aparezca toda la informacion del producto deseado
-.then (response => response.json())
+.then (response => response.json()) //Cambie el formato de las imagenes, para hacerlo en modo carrusel, que pueda deslizar hacia donde quiera y verlas mas detalladamente
 .then (infoProduct => {
     let container = document.getElementById("container")
     container.innerHTML +=` <div class="container">
@@ -114,7 +114,7 @@ fetch(INFO_COMMENTS_URL) //Realizo el fetch para que me aparezcan los comentario
   <p class = "comments-list-data">${conectarComentarios}</p>
   </li> ` 
 
-  function cargarRelacionados(id){ //Aqui realizo una funcion para que me enviar al local storage el producto, y me redirija
+  function cargarRelacionados(id){ //Aqui realizo una funcion para enviar al local storage el producto, y me redirija
     localStorage.setItem("prodID", id);
     window.location = "product-info.html"
   }
