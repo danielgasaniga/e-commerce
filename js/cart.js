@@ -12,13 +12,25 @@ return response.json()
   function peticion(data){
         let htmlContentToAppend = "";
     for (const item of data.articles) {
-      htmlContentToAppend += `<div class="col-md-1"> 
-      <div class="container">
-      <img class="bd-placeholder-img card-img-top" src="${item.image}"  class="img-thumbnail">
-      <p class="m-3">${item.name}</p><p class="m-3">${item.currency}</p> <p class="m-3">${item.unitCost}</p><p class="m-3"></p><p class="m-3">${item.currency}</p> <p class="m-3">${item.unitCost}</p>
-      </div>
-      </div>
-  `;
+      htmlContentToAppend += `<table class="table table"> <br>
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Costo</th>
+          <th scope="col">Cantidad</th>
+          <th scope="col">SubTotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img style="width: 65px; height: 40px;"  class="img-fluid" src="${item.image}"></td>
+          <td>${item.name}</td>
+          <td>${item.currency} ${item.unitCost}</td>
+          <td> <input id=cantidades type="number" style="width:70px"></td>
+          <td><strong>${item.currency} ${item.unitCost}  </strong></td>
+        </tr>`
+  ;
  contenedor.innerHTML = htmlContentToAppend;
     }
   }
