@@ -46,3 +46,7 @@ function subTotal(total) {
   resultado = total * variableCantidades;
   return (document.getElementById("resultado").innerHTML = resultado);
 }
+
+const premium = document.getElementById("envpremium");
+const express = document.getElementById("envexpress");
+const standard = document.getElementById("envstandard");
