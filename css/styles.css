@@ -209,3 +209,11 @@ width: 125px
   border-radius: 2px;
   border: 1px dashed #0087F7;
 }
+
+.modal{
+  position:fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

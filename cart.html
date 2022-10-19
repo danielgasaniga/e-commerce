@@ -49,11 +49,11 @@
       <h4>Tipo de envío</h4>
       <form>
         <br>        
-        <input name="envio" type="radio"  id="envpremium" checked="checked" />Premium 2 a 5 dias (15%)       
+        <input name="envio" type="radio"  id="envpremium" value="0.15" checked="checked" />Premium 2 a 5 dias (15%)       
         <br>       
-        <input name="envio" type="radio"  id="envexpress" />Express 5 a 8 dias (7%)      
+        <input name="envio" type="radio"  id="envexpress" value="0.07" />Express 5 a 8 dias (7%)      
         <br>      
-        <input name="envio" type="radio"  id="envstandard" />Standard 12 a 15 dias (5%)      
+        <input name="envio" type="radio"  id="envstandard" value="0.05" />Standard 12 a 15 dias (5%)      
         </form>
     </div>
     <br>
@@ -92,7 +92,19 @@
     </div> 
     <hr>
     <h4>Forma de pago</h4>
-    <h6>No ha seleccioando. Seleccionar</h6>
+    <h6>No ha seleccionado.</h6>
+
+     <button id="seleccionar">Seleccionar</button>
+
+     <div id="modal" class="modal-container">
+      <div class="modal-content">
+        <h4>Forma de pago</h4>
+        <p>Lalala</p>
+        <div id="close" class="close">
+
+        </div>
+      </div>
+     </div>
   </div>
   </main>
   <footer class="text-muted">
