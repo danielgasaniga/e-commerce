@@ -50,3 +50,5 @@ function subTotal(total) {
 const premium = document.getElementById("envpremium");
 const express = document.getElementById("envexpress");
 const standard = document.getElementById("envstandard");
+const finalizar = document.getElementById("botonFinalizar")
+
