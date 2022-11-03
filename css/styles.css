@@ -217,3 +217,8 @@ width: 125px
   right: 0;
   bottom: 0;
 }
+
+.formulario{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

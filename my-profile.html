@@ -52,51 +52,64 @@
   </nav>
   <main>
     <br>
-   <div class="container">
+   <div class="container" >
       <h3>Perfil</h3>
-      </div>
     </div>
     <br>
     <hr>
-    <div class="container row-cols-1">
-      <h6>Primer nombre*</h6>
-      <div class="row">
+    <form action="" class="formulario"  id="formulario">
+      <div class="formulario__grupo " id="grupo__primerNombre">
+        <label for="nombre" class="formulario__label ">Primer nombre*</label>
       <div class="col-5">
-        <input type="text" class="form-control" id="nombre" required>
+        <input type="text"  class="form-control "  id="nombre" required>
         <div class="invalid-feedback">
           Ingresa un nombre
         </div>
       </div>
-      <h6>Segundo nombre</h6>
+    </div>
+    <div class="formulario__grupo" id="grupo__segundoNombre">
+      <label for="segundoNombre" class="formulario__label">Segundo nombre</label>
       <div class="col-5">
         <input type="text" class="form-control" id="segundoNombre">
       </div>
-      <br>
-      <br>
-      <h6>Primer apellido*</h6>
+    </div>
+      <div class="formulario__grupo" id="grupo__primerApellido">
+        <label for="primerApellido" class="formulario__label">Primer apellido*</label>
       <div class="col-5">
         <input type="text" class="form-control" id="apellido" required>
         <div class="invalid-feedback">
           Ingresa un apellido
         </div>
       </div>
-      <h6>Segundo apellido</h6>
+    </div>
+    <div class="formulario__grupo" id="grupo__segundoApellido">
+      <label for="segundoApellido" class="formulario__label">Segundo apellido</label>
       <div class="col-5">
         <input type="text" class="form-control" id="segundoApellido">
       </div>
-      <br>
-      <br>
-      <h6>E-mail*</h6>
+    </div>
+      <div class="formulario__grupo" id="grupo__email">
+        <label for="email" class="formulario__label">E-mail*</label>
       <div class="col-5">
         <input type="text" class="form-control" id="email" required>
         <div class="invalid-feedback">
           Ingresa un email
         </div>
       </div>
-      <h6>Teléfono de contacto*</h6>
+      </div>
+      <div class="formulario__grupo" id="grupo__telefonoDeContacto">
+        <label for="telefonoDeContacto" class="formulario__label">Teléfono de contacto</label>
       <div class="col-5">
         <input type="text" class="form-control" id="telefono">
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
+  </div>
+  <hr>
+  </form>
+  <button class="btn btn-primary col-2" type="button" onclick="guardar()" id="ingBtn">Guardar Cambios</button>
   </main>
   <footer class="text-muted">
     <div class="container">
