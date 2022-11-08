@@ -139,7 +139,7 @@
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">Metodo de Pago</h1>
+                <h1 class="modal-title fs-5" id="exampleModalLabel"><b>Forma de pago</b></h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
   
@@ -148,22 +148,22 @@
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
                     onclick="chequear()">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Tarjeta De Credito
+                    Tarjeta de crédito
                   </label>
-                  <br>
+                  <hr>
                   <div>
-                    <label class="container" type="number" requiered>Numero de tarjeta</label>
-                    <input class="container" type="number" aria-label="default input example" requiered
+                    <label class="container" type="number" requiered>Número de tarjeta</label>
+                    <input class="container col-md-5" type="number" aria-label="default input example" requiered
                       id="numero_tarjeta">
                   </div>
                   <div>
-                    <label class="container" type="number" requiered>codigo de seguridad </label>
-                    <input class="container" type="number" aria-label="default input example" required
+                    <label class="container" type="number" requiered>Código de seg.</label>
+                    <input class="container col-md-5" type="number" aria-label="default input example" required
                       id="codigo_seguridad">
                   </div>
                   <div>
-                    <label class="container" type="text" requiered>Vencimiento de tarjeta </label>
-                    <input class="container" type="text" aria-label="default input example" requiered
+                    <label class="container" type="text" requiered>Vencimiento (MM/AA) </label>
+                    <input class="container col-md-5" type="text" aria-label="default input example" requiered
                       id="vencimiento_tarjeta">
                   </div>
                 </div>
@@ -172,15 +172,15 @@
                   <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
                     onclick="chequear()">
                   <label class="form-check-label" for="flexRadioDefault1">
-                    Transferencia Bancaria
+                    Transferencia bancaria
                   </label>
-                  <label class="container" type="number" requiered>Numero de cuenta </label>
-                  <input class="container" type="number" aria-label="default input example" id="numero_cuenta">
+                  <hr>
+                  <label class="container" type="number" requiered>Número de cuenta</label>
+                  <input class="container col-md-5" type="number" aria-label="default input example" id="numero_cuenta">
   
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" id="boton_guardar">Save changes</button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="background-color: blue;" id="boton_guardar">Cerrar</button>
                 </div>
               </div>
             </div>
