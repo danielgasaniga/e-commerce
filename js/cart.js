@@ -1,21 +1,22 @@
-const info_carrito = "https://japceibal.github.io/emercado-api/user_cart/25801.json"
+const info_carrito =
+  "https://japceibal.github.io/emercado-api/user_cart/25801.json";
 
 // getElementById necesarios
-const lista = document.getElementById("selector")
-const tarjeta = document.getElementById("flexRadioDefault1")
-const transferencia = document.getElementById("flexRadioDefault2")
-const numero_cuenta = document.getElementById("numero_cuenta")
-const numero_tarjeta = document.getElementById("numero_tarjeta")
-const codigo_seguridad = document.getElementById("codigo_seguridad")
-const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta")
-const boton_guardar = document.getElementById("boton_guardar")
+const lista = document.getElementById("selector");
+const tarjeta = document.getElementById("flexRadioDefault1");
+const transferencia = document.getElementById("flexRadioDefault2");
+const numero_cuenta = document.getElementById("numero_cuenta");
+const numero_tarjeta = document.getElementById("numero_tarjeta");
+const codigo_seguridad = document.getElementById("codigo_seguridad");
+const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta");
+const boton_guardar = document.getElementById("boton_guardar");
 
-const tabla = document.getElementById("tabla")
-const costos = document.getElementById("costos")
-document.addEventListener('DOMContentLoaded', async function () {
-  let dato = await getJSONData(info_carrito)
+const tabla = document.getElementById("tabla");
+const costos = document.getElementById("costos");
+document.addEventListener("DOMContentLoaded", async function () {
+  let dato = await getJSONData(info_carrito);
 
-  tabla.innerHTML = ""
+  tabla.innerHTML = "";
   tabla.innerHTML += `
   <thead>
   <tr>
@@ -25,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <th scope="col">Cantidad</th>
     <th scope="col">Subtotal</th>
   </tr>
-</thead>`
+</thead>`;
   for (let articulos of dato.data.articles) {
     tabla.innerHTML += `
  <tbody>
@@ -37,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="5" id="input"></td>
     <td><b>${articulos.currency}<span id="subtotal"> ${articulos.unitCost}</b> </span> </td>
   </tr>
-  `
+  `;
 
     costos.innerHTML += `
    <ul class="list-group">
@@ -54,97 +55,85 @@ document.addEventListener('DOMContentLoaded', async function () {
     <span class="badge bg-primary rounded-pill" id="total"></span>
   </li>
 </ul>
-   `
+   `;
   }
- 
-  const envio = document.getElementById("envios")
+
+  const envio = document.getElementById("envios");
 
   function calcular_envio() {
-    let subtotal = Number(document.getElementById("subtotal").textContent)
-    let indice = lista.selectedIndex
-    if (indice == 1)
-      envio.innerHTML = subtotal * 0.15
-    else if (indice == 2)
-      envio.innerHTML = subtotal * 0.07
-    else if (indice == 3)
-      envio.innerHTML = subtotal * 0.05
+    let subtotal = Number(document.getElementById("subtotal").textContent);
+    let indice = lista.selectedIndex;
+    if (indice == 1) envio.innerHTML = subtotal * 0.15;
+    else if (indice == 2) envio.innerHTML = subtotal * 0.07;
+    else if (indice == 3) envio.innerHTML = subtotal * 0.05;
   }
-
 
   lista.addEventListener("click", () => {
     calcular_envio();
-    sumar_total()
-  })
+    sumar_total();
+  });
 
   function sumar_total() {
-    let subtotal = Number(document.getElementById("subtotal").textContent)
-    const total = document.getElementById("total")
-    total.innerHTML = subtotal + Number(envio.textContent)
+    let subtotal = Number(document.getElementById("subtotal").textContent);
+    const total = document.getElementById("total");
+    total.innerHTML = subtotal + Number(envio.textContent);
   }
-
-
-  
-
-})
-
+});
 
 function calcular_costo(parametro1, parametro2) {
-  let costoss = document.getElementById("costoss")
+  let costoss = document.getElementById("costoss");
   let subtotal = document.getElementById("subtotal");
-  subtotal.innerHTML = parametro1 * parametro2
-  costoss.innerHTML = parametro1 * parametro2
+  subtotal.innerHTML = parametro1 * parametro2;
+  costoss.innerHTML = parametro1 * parametro2;
 }
-
-
 
 function chequear() {
   if (tarjeta.checked) {
-    transferencia.disabled = true
-    numero_cuenta.disabled = true
+    transferencia.disabled = true;
+    numero_cuenta.disabled = true;
   } else if (transferencia.checked) {
-    tarjeta.disabled = true
-    numero_tarjeta.disabled = true
-    codigo_seguridad.disabled = true
-    vencimiento_tarjeta.disabled = true
+    tarjeta.disabled = true;
+    numero_tarjeta.disabled = true;
+    codigo_seguridad.disabled = true;
+    vencimiento_tarjeta.disabled = true;
   }
 }
 
-const calle = document.getElementById("calle")
-const numero = document.getElementById("numero")
-const esquina = document.getElementById("esquina")
-const boton_comprar = document.getElementById("boton_comprar")
+const calle = document.getElementById("calle");
+const numero = document.getElementById("numero");
+const esquina = document.getElementById("esquina");
+const boton_comprar = document.getElementById("boton_comprar");
 
-function validad (){
+function validad() {
   indice = lista.selectedIndex;
-  if( indice == null || indice == 0 ) {
+  if (indice == null || indice == 0) {
     return false;
   }
-boton_comprar.addEventListener ("click", () => {
-validad()
-alert ("compra realizada con exito")
-})}
-
-
+  boton_comprar.addEventListener("click", () => {
+    validad();
+    alert("compra realizada con exito");
+  });
+}
 
 (function () {
-  'use strict'
+  "use strict";
   // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  let forms = document.querySelectorAll('.needs-validation')
+  let forms = document.querySelectorAll(".needs-validation");
   // Loop over them and prevent submission
-  Array.prototype.slice.call(forms)
-    .forEach(function (form) {
-      form.addEventListener('submit', function (event) {
-       
+  Array.prototype.slice.call(forms).forEach(function (form) {
+    form.addEventListener(
+      "submit",
+      function (event) {
         if (!form.checkValidity()) {
-         {
-          event.preventDefault()
-          event.stopPropagation()
+          {
+            event.preventDefault();
+            event.stopPropagation();
           }
-          
-        } 
+        }
 
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-})()
+        form.classList.add("was-validated");
+      },
+      false
+    );
+  });
+})();
