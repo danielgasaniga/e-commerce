@@ -42,15 +42,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     costos.innerHTML += `
    <ul class="list-group">
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Subtotal del producto (U$D)
+    Subtotal del producto (USD)
     <span class="badge bg-primary rounded-pill" id="costoss">${articulos.unitCost}</span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Costo del envio (U$D)
+    Costo del envio (USD)
     <span class="badge bg-primary rounded-pill" id="envios"></span>
   </li>
   <li class="list-group-item d-flex justify-content-between align-items-center">
-    Total
+    Total (USD)
     <span class="badge bg-primary rounded-pill" id="total"></span>
   </li>
 </ul>
