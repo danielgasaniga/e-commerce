@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <td>${articulos.currency} ${articulos.unitCost}</td>
     <td>
     <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="5" id="input"></td>
-    <td><b>${articulos.currency}<span id="subtotal">${articulos.unitCost}</b> </span> </td>
+    <td><b>${articulos.currency}<span id="subtotal"> ${articulos.unitCost}</b> </span> </td>
   </tr>
   `
 
