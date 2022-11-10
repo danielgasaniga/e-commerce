@@ -67,6 +67,11 @@ document.addEventListener("DOMContentLoaded", async function () {
     else if (indice == 3) envio.innerHTML = subtotal * 0.05;
   }
 
+  input.addEventListener("input", () => {
+    calcular_envio();
+    sumar_total();
+  });
+
   lista.addEventListener("click", () => {
     calcular_envio();
     sumar_total();
@@ -88,13 +93,13 @@ function calcular_costo(parametro1, parametro2) {
 
 function chequear() {
   if (tarjeta.checked) {
-    transferencia = true;
-    numero_cuenta = true;
+    transferencia.required
+    numero_cuenta.disabled = true;
   } else if (transferencia.checked) {
-    tarjeta = true;
-    numero_tarjeta = true;
-    codigo_seguridad = true;
-    vencimiento_tarjeta = true;
+    tarjeta.required
+    numero_tarjeta.disabled = true;
+    codigo_seguridad.disabled = true;
+    vencimiento_tarjeta.disabled = true;
   }
 }
 
