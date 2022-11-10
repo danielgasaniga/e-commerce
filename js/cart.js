@@ -97,7 +97,7 @@ function chequear() {
     numero_cuenta.disabled = true;
   } else if (transferencia.checked) {
     tarjeta.required
-    numero_tarjeta.disabled = true;
+    numero_tarjeta.disabled = true; 
     codigo_seguridad.disabled = true;
     vencimiento_tarjeta.disabled = true;
   }
