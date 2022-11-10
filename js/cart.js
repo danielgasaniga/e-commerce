@@ -110,7 +110,6 @@ function chequear() {
     numero_tarjeta.required = true;
     codigo_seguridad.required = true;
     vencimiento_tarjeta.required = true;
-
   }
 }
 
