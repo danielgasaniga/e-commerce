@@ -172,7 +172,7 @@ function verificarCampos() {
 
 //FUNCIÓN PRINCIPAL A LA CUAL APUNTA CART.HTML
 function enviarRegistro() {
-  return verificarCampos && check.checked
+  return verificarCampos && check.checked 
     ? showAlertSuccess()
     : showAlertError();
 }
