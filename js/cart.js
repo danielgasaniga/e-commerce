@@ -4,10 +4,10 @@ const info_carrito =
 const lista = document.getElementById("selector");
 const tarjeta = document.getElementById("flexRadioDefault1");
 const transferencia = document.getElementById("flexRadioDefault2");
-const numero_cuenta = document.getElementById("numero_cuenta");
 const numero_tarjeta = document.getElementById("numero_tarjeta");
 const codigo_seguridad = document.getElementById("codigo_seguridad");
 const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta");
+const numero_cuenta = document.getElementById("numero_cuenta");
 const boton_cerrar = document.getElementById("boton_cerrar");
 
 const datos = document.getElementById("datos");
@@ -93,11 +93,11 @@ function calcular_costo(parametro1, parametro2) {
 
 function chequear() {
   if (tarjeta.checked) {
-    transferencia.required
+    transferencia.required;
     numero_cuenta.disabled = true;
   } else if (transferencia.checked) {
-    tarjeta.required
-    numero_tarjeta.disabled = true; 
+    tarjeta.required;
+    numero_tarjeta.disabled = true;
     codigo_seguridad.disabled = true;
     vencimiento_tarjeta.disabled = true;
   }
@@ -129,9 +129,9 @@ function validad() {
       function (event) {
         event.preventDefault();
         if (!form.checkValidity()) {
-            event.stopPropagation();
-        }else{
-          showAlertSuccess()
+          event.stopPropagation();
+        } else {
+          showAlertSuccess();
         }
 
         form.classList.add("was-validated");
@@ -153,10 +153,16 @@ function showAlertError() {
 //FUNCIONES COMPLEMENTARIAS DE 'ENVIAR REGISTRO'
 
 function verificarCampos() {
-  return calle.value.trim().length > 1 && esquina.value.trim().length > 1 && numero.value.trim().length > 1;
+  return (
+    calle.value.trim().length > 1 &&
+    esquina.value.trim().length > 1 &&
+    numero.value.trim().length > 1
+  );
 }
 
 //FUNCIÓN PRINCIPAL A LA CUAL APUNTA CART.HTML
 function enviarRegistro() {
-  return (verificarCampos && check.checked) ? showAlertSuccess() : showAlertError();
+  return verificarCampos && check.checked
+    ? showAlertSuccess()
+    : showAlertError();
 }
