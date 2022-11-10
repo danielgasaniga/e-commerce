@@ -20,4 +20,4 @@ ingreso.innerHTML = `<li>${valor}</li>` // Agregara el contenido dentro de "valo
 
 salida.addEventListener('click', function(){ //Creo dicha funcion para que al cerrar sesion, desaparezca usuario con el que me logee
     localStorage.removeItem('usuario');
-})
+})  
