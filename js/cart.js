@@ -124,11 +124,11 @@ function validad() {
     form.addEventListener(
       "submit",
       function (event) {
+        event.preventDefault();
         if (!form.checkValidity()) {
-          {
-            event.preventDefault();
             event.stopPropagation();
-          }
+        }else{
+          showAlertSuccess()
         }
 
         form.classList.add("was-validated");
@@ -137,3 +137,23 @@ function validad() {
     );
   });
 })();
+
+//MENSAJES DE ERROR Y CONFIRMACIÓN
+function showAlertSuccess() {
+  document.getElementById("alert-success").classList.add("show");
+}
+
+function showAlertError() {
+  document.getElementById("alert-danger").classList.add("show");
+}
+
+//FUNCIONES COMPLEMENTARIAS DE 'ENVIAR REGISTRO'
+
+function verificarCampos() {
+  return calle.value.trim().length > 1 && esquina.value.trim().length > 1 && numero.value.trim().length > 1;
+}
+
+//FUNCIÓN PRINCIPAL A LA CUAL APUNTA INDEX.HTML
+function enviarRegistro() {
+  return (verificarCampos && check.checked) ? showAlertSuccess() : showAlertError();
+}
