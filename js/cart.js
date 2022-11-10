@@ -1,7 +1,6 @@
 const info_carrito =
   "https://japceibal.github.io/emercado-api/user_cart/25801.json";
 
-// getElementById necesarios
 const lista = document.getElementById("selector");
 const tarjeta = document.getElementById("flexRadioDefault1");
 const transferencia = document.getElementById("flexRadioDefault2");
@@ -9,15 +8,15 @@ const numero_cuenta = document.getElementById("numero_cuenta");
 const numero_tarjeta = document.getElementById("numero_tarjeta");
 const codigo_seguridad = document.getElementById("codigo_seguridad");
 const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta");
-const boton_guardar = document.getElementById("boton_guardar");
+const boton_cerrar = document.getElementById("boton_cerrar");
 
-const tabla = document.getElementById("tabla");
+const datos = document.getElementById("datos");
 const costos = document.getElementById("costos");
 document.addEventListener("DOMContentLoaded", async function () {
   let dato = await getJSONData(info_carrito);
 
-  tabla.innerHTML = "";
-  tabla.innerHTML += `
+  datos.innerHTML = "";
+  datos.innerHTML += `
   <thead>
   <tr>
     <th scope="col"></th>
@@ -28,7 +27,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   </tr>
 </thead>`;
   for (let articulos of dato.data.articles) {
-    tabla.innerHTML += `
+    datos.innerHTML += `
  <tbody>
   <tr>
     <th scope="row"><img style="width: 100px;" src="${articulos.image}" class="img-thumbnail"> </th>
