@@ -153,7 +153,7 @@ function verificarCampos() {
   return calle.value.trim().length > 1 && esquina.value.trim().length > 1 && numero.value.trim().length > 1;
 }
 
-//FUNCIÓN PRINCIPAL A LA CUAL APUNTA INDEX.HTML
+//FUNCIÓN PRINCIPAL A LA CUAL APUNTA CART.HTML
 function enviarRegistro() {
   return (verificarCampos && check.checked) ? showAlertSuccess() : showAlertError();
 }
