@@ -10,13 +10,13 @@ const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta");
 const numero_cuenta = document.getElementById("numero_cuenta");
 const boton_cerrar = document.getElementById("boton_cerrar");
 
-const datos = document.getElementById("datos");
+const info = document.getElementById("info");
 const costos = document.getElementById("costos");
 document.addEventListener("DOMContentLoaded", async function () {
   let dato = await getJSONData(info_carrito);
 
-  datos.innerHTML = "";
-  datos.innerHTML += `
+  info.innerHTML = "";
+  info.innerHTML += `
   <thead>
   <tr>
     <th scope="col"></th>
@@ -27,14 +27,14 @@ document.addEventListener("DOMContentLoaded", async function () {
   </tr>
 </thead>`;
   for (let articulos of dato.data.articles) {
-    datos.innerHTML += `
+    info.innerHTML += `
  <tbody>
   <tr>
     <th scope="row"><img style="width: 100px;" src="${articulos.image}" class="img-thumbnail"> </th>
     <td>${articulos.name}</td>
     <td>${articulos.currency} ${articulos.unitCost}</td>
     <td>
-    <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="5" id="input"></td>
+    <input oninput="calcular_costo(${articulos.unitCost}, this.value)" type="number" value="${articulos.count}" min="1" max="9" id="cant"></td>
     <td><b>${articulos.currency}<span id="subtotal"> ${articulos.unitCost}</b> </span> </td>
   </tr>
   `;
@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     else if (indice == 3) envio.innerHTML = subtotal * 0.05;
   }
 
-  input.addEventListener("input", () => {
+  cant.addEventListener("input", () => {
     calcular_envio();
     sumar_total();
   });
