@@ -93,15 +93,6 @@ function calcular_costo(parametro1, parametro2) {
 
 function chequear() {
   if (tarjeta.checked) {
-    numero_cuenta.disabled = false;
-    numero_tarjeta.required = false;
-    codigo_seguridad.required = false;
-    vencimiento_tarjeta.required = false;
-    numero_cuenta.required = true;
-    numero_tarjeta.disabled = true;
-    codigo_seguridad.disabled = true;
-    vencimiento_tarjeta.disabled = true;
-  } else if (transferencia.checked) {
     numero_tarjeta.disabled = false;
     codigo_seguridad.disabled = false;
     vencimiento_tarjeta.disabled = false;
@@ -110,6 +101,15 @@ function chequear() {
     numero_tarjeta.required = true;
     codigo_seguridad.required = true;
     vencimiento_tarjeta.required = true;
+  } else if (transferencia.checked) {
+    numero_cuenta.disabled = false;
+    numero_tarjeta.required = false;
+    codigo_seguridad.required = false;
+    vencimiento_tarjeta.required = false;
+    numero_cuenta.required = true;
+    numero_tarjeta.disabled = true;
+    codigo_seguridad.disabled = true;
+    vencimiento_tarjeta.disabled = true;
   }
 }
 
