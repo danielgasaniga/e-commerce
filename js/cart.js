@@ -111,7 +111,6 @@ function validad() {
   }
   boton_comprar.addEventListener("click", () => {
     validad();
-    alert("compra realizada con exito");
   });
 }
 
