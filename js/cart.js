@@ -89,13 +89,13 @@ function calcular_costo(parametro1, parametro2) {
 
 function chequear() {
   if (tarjeta.checked) {
-    transferencia.disabled = true;
-    numero_cuenta.disabled = true;
+    transferencia = true;
+    numero_cuenta = true;
   } else if (transferencia.checked) {
-    tarjeta.disabled = true;
-    numero_tarjeta.disabled = true;
-    codigo_seguridad.disabled = true;
-    vencimiento_tarjeta.disabled = true;
+    tarjeta = true;
+    numero_tarjeta = true;
+    codigo_seguridad = true;
+    vencimiento_tarjeta = true;
   }
 }
 
