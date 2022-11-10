@@ -9,9 +9,9 @@ const codigo_seguridad = document.getElementById("codigo_seguridad");
 const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta");
 const numero_cuenta = document.getElementById("numero_cuenta");
 const boton_cerrar = document.getElementById("boton_cerrar");
-
 const info = document.getElementById("info");
 const costos = document.getElementById("costos");
+
 document.addEventListener("DOMContentLoaded", async function () {
   let dato = await getJSONData(info_carrito);
 
@@ -108,13 +108,13 @@ const numero = document.getElementById("numero");
 const esquina = document.getElementById("esquina");
 const boton_comprar = document.getElementById("boton_comprar");
 
-function validad() {
+function validar() {
   indice = lista.selectedIndex;
   if (indice == null || indice == 0) {
     return false;
   }
   boton_comprar.addEventListener("click", () => {
-    validad();
+    validar();
   });
 }
 
