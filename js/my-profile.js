@@ -8,17 +8,6 @@ const boton_guardar = document.getElementById("boton_guardar");
 //EXPRESION REGULAR PARA CORROBORAR FORMATO DE CORREO
 var emailRegex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i
 
-
-function validad() {
-    indice = lista.selectedIndex;
-    if (indice == null || indice == 0) {
-      return false;
-    }
-    boton_guardar.addEventListener("click", () => {
-      validad();
-    });
-  }
-
 (function () {
     "use strict";
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -62,3 +51,7 @@ function verificarCampos() {
 function guardarRegistro() {
   return (verificarCampos && check.checked) ? showAlertSuccess() : showAlertError();
 }
+
+boton_guardar.addEventListener("click", () => {
+  guardarRegistro();
+});
