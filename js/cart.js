@@ -1,14 +1,14 @@
 const info_carrito =
   "https://japceibal.github.io/emercado-api/user_cart/25801.json";
 
-const lista = document.getElementById("selector");
+const opciones = document.getElementById("selector");
 const tarjeta = document.getElementById("flexRadioDefault1");
 const transferencia = document.getElementById("flexRadioDefault2");
-const numero_tarjeta = document.getElementById("numero_tarjeta");
-const codigo_seguridad = document.getElementById("codigo_seguridad");
-const vencimiento_tarjeta = document.getElementById("vencimiento_tarjeta");
-const numero_cuenta = document.getElementById("numero_cuenta");
-const boton_cerrar = document.getElementById("boton_cerrar");
+const numeroTarjeta = document.getElementById("numero_tarjeta");
+const codigoSeguridad = document.getElementById("codigo_seguridad");
+const vencimientoTarjeta = document.getElementById("vencimiento_tarjeta");
+const numeroCuenta = document.getElementById("numero_cuenta");
+const botonCerrar = document.getElementById("boton_cerrar");
 const info = document.getElementById("info");
 const costos = document.getElementById("costos");
 
@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function calcular_envio() {
     let subtotal = Number(document.getElementById("subtotal").textContent);
-    let indice = lista.selectedIndex;
+    let indice = opciones.selectedIndex;
     if (indice == 1) envio.innerHTML = subtotal * 0.15;
     else if (indice == 2) envio.innerHTML = subtotal * 0.07;
     else if (indice == 3) envio.innerHTML = subtotal * 0.05;
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     sumar_total();
   });
 
-  lista.addEventListener("click", () => {
+  opciones.addEventListener("click", () => {
     calcular_envio();
     sumar_total();
   });
@@ -93,37 +93,37 @@ function calcular_costo(parametro1, parametro2) {
 
 function chequear() {
   if (tarjeta.checked) {
-    numero_tarjeta.disabled = false;
-    codigo_seguridad.disabled = false;
-    vencimiento_tarjeta.disabled = false;
-    numero_cuenta.required = false;
-    numero_cuenta.disabled = true;
-    numero_tarjeta.required = true;
-    codigo_seguridad.required = true;
-    vencimiento_tarjeta.required = true;
+    numeroTarjeta.disabled = false;
+    codigoSeguridad.disabled = false;
+    vencimientoTarjeta.disabled = false;
+    numeroCuenta.required = false;
+    numeroCuenta.disabled = true;
+    numeroTarjeta.required = true;
+    codigoSeguridad.required = true;
+    vencimientoTarjeta.required = true;
   } else if (transferencia.checked) {
-    numero_cuenta.disabled = false;
-    numero_tarjeta.required = false;
-    codigo_seguridad.required = false;
-    vencimiento_tarjeta.required = false;
-    numero_cuenta.required = true;
-    numero_tarjeta.disabled = true;
-    codigo_seguridad.disabled = true;
-    vencimiento_tarjeta.disabled = true;
+    numeroCuenta.disabled = false;
+    numeroTarjeta.required = false;
+    codigoSeguridad.required = false;
+    vencimientoTarjeta.required = false;
+    numeroCuenta.required = true;
+    numeroTarjeta.disabled = true;
+    codigoSeguridad.disabled = true;
+    vencimientoTarjeta.disabled = true;
   }
 }
 
 const calle = document.getElementById("calle");
 const numero = document.getElementById("numero");
 const esquina = document.getElementById("esquina");
-const boton_comprar = document.getElementById("boton_comprar");
+const botonComprar = document.getElementById("boton_comprar");
 
 function validar() {
-  indice = lista.selectedIndex;
+  indice = opciones.selectedIndex;
   if (indice == null || indice == 0) {
     return false;
   }
-  boton_comprar.addEventListener("click", () => {
+  botonComprar.addEventListener("click", () => {
     validar();
   });
 }
@@ -172,7 +172,7 @@ function verificarCampos() {
 
 //FUNCIÓN PRINCIPAL A LA CUAL APUNTA CART.HTML
 function enviarRegistro() {
-  return verificarCampos && check.checked 
+  return verificarCampos && check.checked
     ? showAlertSuccess()
     : showAlertError();
 }
