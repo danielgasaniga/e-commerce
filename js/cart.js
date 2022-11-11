@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   function calcular_envio() {
     let subtotal = Number(document.getElementById("subtotal").textContent);
-    let indice = opciones.selectedIndex;
-    if (indice == 1) envio.innerHTML = subtotal * 0.15;
-    else if (indice == 2) envio.innerHTML = subtotal * 0.07;
-    else if (indice == 3) envio.innerHTML = subtotal * 0.05;
+    let opcion = opciones.selectedIndex;
+    if (opcion == 1) envio.innerHTML = subtotal * 0.15;
+    else if (opcion == 2) envio.innerHTML = subtotal * 0.07;
+    else if (opcion == 3) envio.innerHTML = subtotal * 0.05;
   }
 
   cant.addEventListener("input", () => {
@@ -119,8 +119,8 @@ const esquina = document.getElementById("esquina");
 const botonComprar = document.getElementById("boton_comprar");
 
 function validar() {
-  indice = opciones.selectedIndex;
-  if (indice == null || indice == 0) {
+  opcion = opciones.selectedIndex;
+  if (opcion == null || opcion == 0) {
     return false;
   }
   botonComprar.addEventListener("click", () => {
@@ -151,16 +151,12 @@ function validar() {
   });
 })();
 
-//MENSAJES DE ERROR Y CONFIRMACIÓN
+
 function showAlertSuccess() {
   document.getElementById("alert-success").classList.add("show");
 }
 
-function showAlertError() {
-  document.getElementById("alert-danger").classList.add("show");
-}
 
-//FUNCIONES COMPLEMENTARIAS DE 'ENVIAR REGISTRO'
 
 function verificarCampos() {
   return (
@@ -170,7 +166,7 @@ function verificarCampos() {
   );
 }
 
-//FUNCIÓN PRINCIPAL A LA CUAL APUNTA CART.HTML
+
 function enviarRegistro() {
   return verificarCampos && check.checked
     ? showAlertSuccess()
