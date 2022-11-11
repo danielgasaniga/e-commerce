@@ -31,6 +31,15 @@
           </li>
           <li class="nav-item" id="aca_correo">
           </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="login" data-bs-toggle="dropdown" aria-expanded="false"> <!--Agrego una lista desplegable, con botones, que cada una redirija a donde desee, y le creo un id, con el nombre login para al iniciar, me quede el nombre con el que me loguie-->
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="login">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" id="salida" href="index.html">Cerrar sesión</a></li><!--A este le doy un id, para luego en una funcion, poder hacer que borre el id de usuario al cerrar la sesión-->
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
