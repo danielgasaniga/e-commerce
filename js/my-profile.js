@@ -12,9 +12,9 @@ segundoApellido.value = localStorage.getItem("segundoApellido");
 email.value = localStorage.getItem("usuario");
 telefonoDeContacto.value = localStorage.getItem("telefonoDeContacto");
 
-const forms = document.querySelectorAll(".needs-validation");
+const validar = document.querySelectorAll(".needs-validation");
 
-forms.forEach((form) => {
+validar.forEach((form) => {
   form.addEventListener(
     "submit",
     (event) => {
