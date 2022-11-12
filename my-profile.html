@@ -45,76 +45,81 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item" id="aca_correo"></li>>
-        </li>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="login" data-bs-toggle="dropdown" aria-expanded="false"> <!--Agrego una lista desplegable, con botones, que cada una redirija a donde desee, y le creo un id, con el nombre login para al iniciar, me quede el nombre con el que me loguie-->
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="login">
-            <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
-            <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-            <li><a class="dropdown-item" id="salida" href="index.html">Cerrar sesión</a></li><!--A este le doy un id, para luego en una funcion, poder hacer que borre el id de usuario al cerrar la sesión-->
-          </ul>
-        </div>
-      </ul>
+          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="login" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <!--Agrego una lista desplegable, con botones, que cada una redirija a donde desee, y le creo un id, con el nombre login para al iniciar, me quede el nombre con el que me loguie-->
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="login">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" id="salida" href="index.html">Cerrar sesión</a></li>
+              <!--A este le doy un id, para luego en una funcion, poder hacer que borre el id de usuario al cerrar la sesión-->
+            </ul>
+          </div>
+        </ul>
+      </div>
     </div>
-  </div>
   </nav>
   <main>
     <br>
-    
-   <div class="container" >
+
+    <div class="container">
       <h3>Perfil</h3>
-    
-    <br>
-    <hr>
-    <form class="row g-4 needs-validation" novalidate>
-      <div class="col-5">
-        <label for="validationCustom01" class="formulario__label ">Primer nombre*</label>
-        <input type="text"  class="form-control "  id="primerNombre" required>
-        <div class="invalid-feedback">
-          Ingrese un nombre
+
+      <br>
+      <hr>
+      <form class="row g-4 needs-validation" novalidate>
+        <div class="col-5">
+          <label for="validationCustom01" class="formulario__label ">Primer nombre*</label>
+          <input type="text" class="form-control " id="primerNombre" required>
+          <div class="invalid-feedback">
+            Ingrese un nombre
+          </div>
         </div>
-      </div>
 
-    <div class="col-5">
-      <label for="validationCustom02" class="formulario__label">Segundo nombre</label>
-        <input type="text" class="form-control" id="segundoNombre">
-    </div>
-
-      <div class="col-5">
-        <label for="validationCustom03" class="formulario__label">Primer apellido*</label>
-        <input type="text" class="form-control" id="primerApellido" required>
-        <div class="invalid-feedback">
-          Ingrese su primer apellido
+        <div class="col-5">
+          <label for="validationCustom02" class="formulario__label">Segundo nombre</label>
+          <input type="text" class="form-control" id="segundoNombre">
         </div>
-      </div>
 
-    <div class="col-5">
-      <label for="validationCustom04" class="formulario__label">Segundo apellido</label>
-        <input type="text" class="form-control" id="segundoApellido">
-      </div>
+        <div class="col-5">
+          <label for="validationCustom03" class="formulario__label">Primer apellido*</label>
+          <input type="text" class="form-control" id="primerApellido" required>
+          <div class="invalid-feedback">
+            Ingrese su primer apellido
+          </div>
+        </div>
 
-      <div class="col-5">
-        <label for="validationCustom05" class="formulario__label">E-mail*</label>
-        <input type="text" class="form-control" id="email" required>
-      </div>
+        <div class="col-5">
+          <label for="validationCustom04" class="formulario__label">Segundo apellido</label>
+          <input type="text" class="form-control" id="segundoApellido">
+        </div>
 
-      <div class="col-5">
-        <label for="validationCustom06" class="formulario__label">Teléfono de contacto</label>
-        <input type="text" class="form-control" id="telefonoDeContacto">
+        <div class="col-5">
+          <label for="validationCustom05" class="formulario__label">E-mail*</label>
+          <input type="text" class="form-control" id="email" required>
+        </div>
+
+        <div class="col-5">
+          <label for="validationCustom06" class="formulario__label">Teléfono de contacto</label>
+          <input type="text" class="form-control" id="telefonoDeContacto">
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <hr>
+
+        <button class="btn btn-success col-2" type="submit">Guardar Cambios</button>
     </div>
-
-    <br>
-    <br>
-    <br>
-    <br>
-
-  
-
-  <hr>
-  <button class="btn btn-success col-2" type="submit" >Guardar Cambios</button>
-</div>
-  </form>
+    </form>
   </main>
   <footer class="text-muted">
     <div class="container">
