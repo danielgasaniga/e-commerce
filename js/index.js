@@ -15,9 +15,8 @@ function clicked() {
   }
 }
 
-
-button.addEventListener("click", (evt) => { //Al apretar el boton, realizara el siguiente evento
+button.addEventListener("click", (evt) => {
+  //Al apretar el boton, realizara el siguiente evento
   // Si hay texto ingresado en el input, se guardara en el localStorage
   if (email.value) localStorage.setItem("usuario", email.value);
 });
-

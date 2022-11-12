@@ -151,12 +151,9 @@ function validar() {
   });
 })();
 
-
 function showAlertSuccess() {
   document.getElementById("alert-success").classList.add("show");
 }
-
-
 
 function verificarCampos() {
   return (
@@ -165,7 +162,6 @@ function verificarCampos() {
     numero.value.trim().length > 1
   );
 }
-
 
 function enviarRegistro() {
   return verificarCampos && check.checked

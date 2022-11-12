@@ -15,41 +15,55 @@
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark p-1">
     <div class="container">
+
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav w-100 justify-content-between">
+
           <li class="nav-item">
             <a class="nav-link" href="index.html">Inicio</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link active" href="categories.html">Categorías</a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
+
           <li class="nav-item" id="aca_correo"></li>>
           </li>
+
           <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="login" data-bs-toggle="dropdown" aria-expanded="false"> <!--Agrego una lista desplegable, con botones, que cada una redirija a donde desee, y le creo un id, con el nombre login para al iniciar, me quede el nombre con el que me loguie-->
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="login" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <!--Agrego una lista desplegable, con botones, que cada una redirija a donde desee, y le creo un id, con el nombre login para al iniciar, me quede el nombre con el que me loguie-->
             </button>
+
             <ul class="dropdown-menu" aria-labelledby="login">
               <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
               <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
-              <li><a class="dropdown-item" id="salida" href="index.html">Cerrar sesión</a></li><!--A este le doy un id, para luego en una funcion, poder hacer que borre el id de usuario al cerrar la sesión-->
+              <li><a class="dropdown-item" id="salida" href="index.html">Cerrar sesión</a></li>
+              <!--A este le doy un id, para luego en una funcion, poder hacer que borre el id de usuario al cerrar la sesión-->
             </ul>
           </div>
         </ul>
+
       </div>
     </div>
   </nav>
+
   <main class="pb-5">
     <div class="text-center p-4">
       <h2>Categorías</h2>
       <p class="lead">Verás aquí todas las categorías del sitio.</p>
     </div>
+
     <div class="container">
       <div class="row">
         <div class="col text-end">
@@ -63,34 +77,45 @@
           </div>
         </div>
       </div>
+
       <div class="row">
         <div class="col-lg-6 offset-lg-6 col-md-12 mb-1 container">
           <div class="row container p-0 m-0">
             <div class="col">
               <p class="font-weight-normal text-end my-2">Precio</p>
             </div>
+
             <div class="col">
               <input class="form-control" type="number" placeholder="min." id="rangeFilterCountMin">
             </div>
+
             <div class="col">
               <input class="form-control" type="number" placeholder="máx." id="rangeFilterCountMax">
             </div>
+
             <div class="col-3 p-0">
               <div class="btn-group" role="group">
+
                 <button class="btn btn-light btn-block" id="rangeFilterCount">Filtrar</button>
+
                 <button class="btn btn-link btn-sm" id="clearRangeFilter">Limpiar</button>
+
               </div>
             </div>
+
           </div>
         </div>
       </div>
+
       <div class="container">
-      <div class="row">
-        <div class="list-group" id="cat-list-container">
+        <div class="row">
+          <div class="list-group" id="cat-list-container">
+          </div>
         </div>
       </div>
-    </div>
+
   </main>
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
