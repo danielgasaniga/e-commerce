@@ -9,7 +9,7 @@ primerNombre.value = localStorage.getItem("primerNombre");
 segundoNombre.value = localStorage.getItem("segundoNombre");
 primerApellido.value = localStorage.getItem("primerApellido");
 segundoApellido.value = localStorage.getItem("segundoApellido");
-email.value = localStorage.getItem("login");
+email.value = localStorage.getItem("usuario");
 telefonoDeContacto.value = localStorage.getItem("telefonoDeContacto");
 
 const forms = document.querySelectorAll(".needs-validation");
